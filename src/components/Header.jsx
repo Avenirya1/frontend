@@ -69,9 +69,9 @@ const Header = () => {
           <div className="flex items-center gap-2">
             <a href="/">
             <img
-              src="https://petoba.avenirya.com/wp-content/uploads/2022/07/Untitled-design-6.png"
+              src="https://website.avenirya.com/wp-content/uploads/2025/10/3dd06b30-762a-45bc-8a2c-89eaacdfd347.jpg"
               alt="Logo"
-              className="h-20 w-auto"
+              className="h-20 w-auto p-3"
             /></a>
           </div>
 

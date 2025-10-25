@@ -12,13 +12,13 @@ const Footer = () => {
             {/* Logo + About */}
             <div>
               <img
-                src="https://petoba.avenirya.com/wp-content/uploads/2022/07/Untitled-design-6.png"
+                src="https://website.avenirya.com/wp-content/uploads/2025/10/3dd06b30-762a-45bc-8a2c-89eaacdfd347.jpg"
                 alt="Petoba Logo"
                 className="h-14 w-auto mb-4 mx-auto md:mx-0"
               />
               <p className="text-gray-600 text-sm leading-relaxed">
-                Petoba KOT & Billing — a smart kitchen order ticket and billing solution by{" "}
-                <span className="font-semibold">Avenirya Solutions OPC Pvt Ltd</span>.
+                Foodies menu - a smart kitchen - by Yuviz Digital{" "}
+                <span className="font-semibold">Yuviz Digital, Pothencode, Trivandrum, Kerala</span>.
               </p>
             </div>
 
@@ -26,9 +26,9 @@ const Footer = () => {
             <div>
               <h3 className="font-semibold text-gray-800 mb-3 text-lg">Company</h3>
               <ul className="space-y-2 text-gray-600 text-sm">
-                <li>Avenirya Solutions OPC Pvt Ltd</li>
-                <li>109, Kohinoor Emerald</li>
-                <li>Sus - Pashan Road, Pune</li>
+                <li>Yuviz Digital, </li>
+                <li>Pothencode, Trivandrum, </li>
+                <li>Kerala</li>
               </ul>
             </div>
 
@@ -36,8 +36,8 @@ const Footer = () => {
             <div>
               <h3 className="font-semibold text-gray-800 mb-3 text-lg">Contact</h3>
               <ul className="space-y-2 text-gray-600 text-sm">
-                <li>📞 +91 7499835687</li>
-                <li>📧 admin@avenirya.com</li>
+                <li>📞 +91 9656015000</li>
+                <li>📧 yuvizinfo@gmail.com</li>
               </ul>
             </div>
 
@@ -56,7 +56,7 @@ const Footer = () => {
           {/* Divider */}
           <div className="border-t border-gray-200 mt-8 pt-6 text-center">
             <p className="text-sm text-gray-500">
-              © 2025 Petoba KOT & Billing · Avenirya Solutions OPC Pvt Ltd · All rights reserved.
+              © 2025 Yuviz Digital, Pothencode, Trivandrum, Kerala · All rights reserved.
             </p>
           </div>
         </div>
