@@ -12,7 +12,7 @@ function Loginfree() {
     setError("");
     try {
       const res = await fetch(
-        "/api/admin/login",
+        "https://srv1070767.hstgr.cloud/api/admin/login",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

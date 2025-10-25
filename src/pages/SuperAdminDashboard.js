@@ -29,7 +29,7 @@ const SuperAdminDashboard = () => {
     3: 50,  // Level 3 agency → max 50 restaurants
   };
 
-  const API = "/api/admin";
+  const API = "https://srv1070767.hstgr.cloud/api/admin";
   const WP_USERNAME = "yashkolnure58@gmail.com";
   const WP_APP_PASSWORD = "05mq iTLF UvJU dyaz 7KxQ 8pyc";
   const WP_SITE_URL = "https://website.avenirya.com";
@@ -357,7 +357,7 @@ const uploadHomeImageToWordPress = async (file) => {
                           </button>
 
                           <a
-                            href={`/menu/${rest._id}`}
+                            href={`/menuwp/${rest.slug}`}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex items-center gap-1 text-green-600 hover:text-green-800"

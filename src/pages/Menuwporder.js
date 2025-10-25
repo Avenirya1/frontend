@@ -25,39 +25,35 @@ function RestaurantMenuPagewp() {
   const [loading, setLoading] = useState(true);
   const carouselRef = useRef(null);
   const [offers, setOffers] = useState([]);
-
-  useEffect(() => {
+// First useEffect for initial ID fetch
+useEffect(() => {
+  const fetchRestaurantId = async () => {
     if (!rawParam) return;
-
-    // Try to extract a 24-char Mongo ObjectId at the end of the param
-    const idMatch = rawParam.match(/([0-9a-fA-F]{24})$/);
-    if (idMatch) {
-      setId(idMatch[0]);
-      return;
+    
+    try {
+      setLoading(true);
+      // First get restaurant ID from slug
+      const response = await fetch(`https://srv1070767.hstgr.cloud/api/admin/restaurants/slug/${rawParam}`);
+      const data = await response.json();
+      
+      if (!response.ok) throw new Error(data.message);
+      setId(data.id); // Set the ID for subsequent calls
+      console.log("Fetched restaurant ID:", data.id);
+      
+    } catch (error) {
+      console.error("Error fetching restaurant ID:", error);
     }
+  };
 
-    // Try a short hex id (last 6 chars) or numeric id if your app uses it
-    const lastSegment = rawParam.split('-').pop();
-    if (/^[0-9a-fA-F]{6}$/.test(lastSegment)) {
-      setId(lastSegment);
-      return;
-    }
+  fetchRestaurantId();
+}, [rawParam]);
 
-    // Fallback: ask backend for the restaurant by slug to get the id
-    fetch(`/api/admin/restaurants/slug/${rawParam}`)
-      .then(res => res.json())
-      .then(data => {
-        // backend might return _id or id
-        if (data && (data._id || data.id)) setId(data._id || data.id);
-      })
-      .catch(err => console.error(err));
-  }, [rawParam]);
   useEffect(() => {
     const fetchOffers = async () => {
       try {
         if (!id) return; // wait until id is resolved
         const token = localStorage.getItem("token");
-        const res = await fetch(`/api/admin/${id}/offers`, { headers: { Authorization: `Bearer ${token}` } });
+        const res = await fetch(`https://srv1070767.hstgr.cloud/api/admin/${id}/offers`, { headers: { Authorization: `Bearer ${token}` } });
         const data = await res.json();
         if (res.ok && Array.isArray(data)) setOffers(data);
       } catch {
@@ -78,10 +74,10 @@ function RestaurantMenuPagewp() {
         const token = localStorage.getItem("token");
 
         const [menuRes, detailsRes] = await Promise.all([
-          fetch(`/api/admin/${id}/menu`, {
+          fetch(`https://srv1070767.hstgr.cloud/api/admin/${id}/menu`, {
             headers: { Authorization: `Bearer ${token}` },
           }),
-          fetch(`/api/admin/${id}/details`, {
+          fetch(`https://srv1070767.hstgr.cloud/api/admin/${id}/details`, {
             headers: { Authorization: `Bearer ${token}` },
           }),
         ]);
