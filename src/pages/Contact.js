@@ -131,7 +131,9 @@ const ContactPage = () => {
                   <FaMapMarkerAlt size={20} />
                 </div>
                 <p className="text-gray-700">
-                109, Kohinoor Emerald, Sus - Pashan Road,<br />Pune, Maharashtra - 411021, India
+                Yuviz Digital,
+Pothencode, Trivandrum,
+Kerala
                 </p>
             </div>
 
@@ -164,8 +166,7 @@ const ContactPage = () => {
                   <FaEnvelope size={20} />
                 </div>
                 <div className="space-y-1">
-                  <p className="text-gray-700">admin@avenirya.com</p>
-                  <p className="text-gray-700">yashkolnure58@gmail.com</p>
+                  <p className="text-gray-700">yuvizinfo@gmail.com</p>
                 </div>
             </div>
           </div>
