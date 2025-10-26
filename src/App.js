@@ -44,24 +44,25 @@ import RedirectManagerPage from "./pages/redirectpage";
 function AppWrapper() {
   const location = useLocation();
 
-  // Pages where we want to hide Header/Footer
-  const noHeaderFooterRoutes = [
-    "/menu/:id",
-    "/cloudkitchen/:id",
-    "/:id",
-    "/shop/:id",
-    "/restaurant/:id",
+  // ✅ Pages where Header & Footer should be visible
+  const showHeaderFooterRoutes = [
+    "/", 
+    "/features",
+    "/contact",
+    "/membership",
+    "/register",
+    "/login",
+    "/agency",
+    "/agency-register",
+    "/agency-login",
   ];
 
-  // Check current route
-  const hideHeaderFooter = noHeaderFooterRoutes.some(path => {
-    const regex = new RegExp("^" + path.replace(":id", "[^/]+") + "$");
-    return regex.test(location.pathname);
-  });
+  // Check if the current path matches one of the listed routes
+  const showHeaderFooter = showHeaderFooterRoutes.includes(location.pathname);
 
   return (
     <>
-      {!hideHeaderFooter && <Header />}
+      {showHeaderFooter && <Header />}
       <Routes>
         <Route path="/menu/:id" element={<MenuPageWithoutCart />} />
         <Route path="/cloudkitchen/:id" element={<MenuPageWithoutCartCloud />} />
@@ -101,7 +102,7 @@ function AppWrapper() {
         <Route path="/MembershipUpgrade" element={<MembershipUpgrade />} />
         <Route path="/upload-menu" element={<UploadMenuPage />} />
       </Routes>
-      {!hideHeaderFooter && <Footer />}
+      {showHeaderFooter && <Footer />}
     </>
   );
 }
