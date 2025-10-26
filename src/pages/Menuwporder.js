@@ -173,12 +173,23 @@ if (!adminPhone) {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
         <div className="bg-white p-8 rounded-xl shadow text-center">
-          <h2 className="text-2xl font-bold text-red-600 mb-4">Restaurant Inactive</h2>
-          <p className="text-gray-700 mb-2">
-            This restaurant is Disabled Connect to Petoba Team to Reactivate your Menu.
-          </p>
-          <p className="text-gray-400 text-sm">Powered By Petoba Digital QR Menu</p>
-        </div>
+  <h2 className="text-2xl font-bold text-red-600 mb-4">Restaurant Inactive</h2>
+  <p className="text-gray-700 mb-2">
+    This restaurant is disabled. Connect with the Yuviz Digital Team to reactivate your menu.
+  </p>
+
+  <a
+    href="https://wa.me/918767640530?text=Hi%20I%20want%20to%20reactivate%20my%20restaurant%20menu"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-block bg-green-500 text-white font-semibold py-2 px-5 rounded-full mt-4 hover:bg-green-600 transition"
+  >
+    Chat on WhatsApp
+  </a>
+
+  <p className="text-gray-400 text-sm mt-6">Powered By Yuviz Digital QR Menu</p>
+</div>
+
       </div>
     );
   }
@@ -186,10 +197,10 @@ if (!adminPhone) {
   return (
     <>
             <Helmet>
-        <title>Petoba | Digital QR Menu & Ordering</title>
+        <title>Yuviz Digital | Digital QR Menu & Ordering</title>
         <meta
           name="description"
-          content="Petoba lets restaurants create digital QR menus. Customers scan, order, and enjoy a contactless dining experience."
+          content="Yuviz Digital lets restaurants create digital QR menus. Customers scan, order, and enjoy a contactless dining experience."
         />
 
         <link
@@ -201,7 +212,7 @@ if (!adminPhone) {
           property="og:image"
           content="https://petoba.avenirya.com/wp-content/uploads/2025/09/Untitled-design-6.png"
         />
-        <meta property="og:title" content="Petoba - Digital QR Menu" />
+        <meta property="og:title" content="Yuviz Digital - Digital QR Menu" />
         <meta property="og:description" content="Turn your restaurant’s menu into a digital QR code menu." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://yash.avenirya.com" />
@@ -307,7 +318,15 @@ if (!adminPhone) {
         </div>
         
         <div className="flex flex-wrap justify-center">
-          <p className="text-gray-500 text-center mt-4">© {new Date().getFullYear()} Petoba. All rights reserved.</p>
+<p className="text-gray-500 text-center mt-4 flex items-center justify-center gap-2">
+  Made with <span className="text-red-500">❤️</span> by{" "}
+  <a
+    href="/"
+    className="font-semibold text-gray-700 hover:text-orange-500 transition-colors"
+  >
+    Foodies Menu
+  </a>
+</p>
         </div>
       </div>
 

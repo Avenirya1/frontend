@@ -5,13 +5,37 @@ import { MessageCircle } from "lucide-react";
 const MembershipPage = () => {
   const plans = [
     {
+      name: "Free Plan",
+      price: "₹0",
+      oldPrice: "",
+      subText: "Valid for 7 Days",
+      period: "",
+      features: [
+        { name: "Unlimited Menu Items", available: true },
+        { name: "Full Dashboard Access", available: true },
+        { name: "Premium QR Code & Menu Designs", available: true },
+        { name: "Upload Menu with Images", available: true },
+        { name: "AI Menu Upload", available: true },
+        { name: "AI Image Upload", available: true },
+        { name: "Dedicated WhatsApp Support", available: true },
+        { name: "WhatsApp Ordering Feature", available: true },
+        { name: "Take Google Map Reviews", available: true },
+        { name: "Add Offer Banners", available: true },
+        { name: "Connect Instagram / Social to Menu", available: true },
+        { name: "Add Custom Line (We take Party Orders)", available: true },
+      ],
+      buttonText: "Start Free Trial",
+      gradient: "from-green-500 to-emerald-600",
+      highlight: false,
+    },
+    {
       name: "Monthly Plan",
       price: "₹499",
       oldPrice: "₹699",
       subText: "Free for 7 Days",
       period: "/month",
       features: [
-        { name: "Upto 100 Menu Items", available: true },
+        { name: "Unlimited Menu Items", available: true },
         { name: "Full Dashboard Access", available: true },
         { name: "Premium QR Code & Menu Designs", available: true },
         { name: "Upload Menu with Images", available: true },
@@ -35,7 +59,7 @@ const MembershipPage = () => {
       subText: "Free for 7 Days",
       period: "/year",
       features: [
-        { name: "Upto 100 Menu Items", available: true },
+        { name: "Unlimited Menu Items", available: true },
         { name: "Full Dashboard Access", available: true },
         { name: "Premium QR Code & Menu Designs", available: true },
         { name: "Upload Menu with Images", available: true },
@@ -50,6 +74,7 @@ const MembershipPage = () => {
       ],
       buttonText: "Get Yearly Plan",
       gradient: "from-purple-500 to-pink-600",
+      highlight: false,
     },
   ];
 
@@ -92,12 +117,12 @@ const MembershipPage = () => {
           </p>
 
           {/* Plan Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {plans.map((plan, index) => (
               <div
                 key={index}
                 className={`relative flex flex-col justify-between rounded-3xl p-8 bg-white/70 backdrop-blur-md border border-gray-200 shadow-xl hover:shadow-2xl transition-all ${
-                  plan.highlight ? "scale-100" : ""
+                  plan.highlight ? "scale-100 border-blue-400" : ""
                 } min-h-[750px]`}
               >
                 <h3 className="text-3xl font-semibold text-center mb-4 text-gray-900">
@@ -105,9 +130,11 @@ const MembershipPage = () => {
                 </h3>
 
                 <div className="text-center mb-6">
-                  <span className="text-2xl text-gray-400 line-through mr-2">
-                    {plan.oldPrice}
-                  </span>
+                  {plan.oldPrice && (
+                    <span className="text-2xl text-gray-400 line-through mr-2">
+                      {plan.oldPrice}
+                    </span>
+                  )}
                   <span className="text-4xl font-bold text-gray-900">
                     {plan.price}
                   </span>

@@ -38,10 +38,10 @@ function Loginfree() {
   return (
   <div className="relative bg-white  py-16">
             <Helmet>
-        <title>Petoba | Digital QR Menu & Ordering</title>
+        <title>Foodies menu | Digital QR Menu & Ordering</title>
         <meta
           name="description"
-          content="Petoba lets restaurants create digital QR menus. Customers scan, order, and enjoy a contactless dining experience."
+          content="Foodies menu lets restaurants create digital QR menus. Customers scan, order, and enjoy a contactless dining experience."
         />
 
         <link
@@ -53,7 +53,7 @@ function Loginfree() {
           property="og:image"
           content="https://petoba.avenirya.com/wp-content/uploads/2025/09/Untitled-design-6.png"
         />
-        <meta property="og:title" content="Petoba - Digital QR Menu" />
+        <meta property="og:title" content="Foodies menu - Digital QR Menu" />
         <meta property="og:description" content="Turn your restaurant’s menu into a digital QR code menu." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://yash.avenirya.com" />
@@ -110,28 +110,22 @@ function Loginfree() {
       </button>
 
       <p className="text-gray-600 text-sm mt-4 text-center">
-        Don’t have an account?{" "}
-        <Link
-          to="/membership"
-          className="text-orange-600 font-semibold hover:underline"
-        >
-          Register now
-        </Link>
-      </p>
-      <p className="text-gray-600 text-sm mt-4 text-center">
-        Login As Agency{" "}
-        <Link
-          to="/agency-login"
-          className="text-orange-600 font-semibold hover:underline"
-        >
-            Click Here
-        </Link>
-      </p>
+  Don’t have an account?{" "}
+  <a
+    href="https://wa.me/918767640530?text=Hi%20I%20want%20to%20register%20for%20membership"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-orange-600 font-semibold hover:underline"
+  >
+    Chat on WhatsApp
+  </a>
+</p>
+
     </div>
 
     {/* WhatsApp Help Floating Button */}
     <a
-      href="https://wa.me/919656015000?text=Hello%2C%20I%20need%20help%20with%20Petoba%20menu%20login."
+      href="https://wa.me/919656015000?text=Hello%2C%20I%20need%20help%20with%20Foodies%20menu%20login."
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-5 right-5 z-50 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-full shadow-lg flex items-center gap-2"

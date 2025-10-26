@@ -16,6 +16,17 @@ const ContactPage = () => {
     setLoading(true);
     setStatus("");
 
+    const { name, email, message } = formData;
+
+    // ✅ Create prefilled WhatsApp message
+    const whatsappMessage = `Hi, I want to contact regarding Foodies menu.\n\n👤 Name: ${name}\n📧 Email: ${email}\n💬 Message: ${message}`;
+
+    // ✅ Redirect to WhatsApp with drafted message
+    const whatsappURL = `https://wa.me/919656015000?text=${encodeURIComponent(whatsappMessage)}`;
+    window.open(whatsappURL, "_blank");
+
+    // Optional backend submission (you can uncomment this if you still want to send it)
+    /*
     try {
       const res = await fetch("https://petoba.avenirya.com/wp-json/contact-form/v1/send", {
         method: "POST",
@@ -33,18 +44,19 @@ const ContactPage = () => {
     } catch (error) {
       setStatus("❌ Error connecting to the server.");
     }
+    */
+
     setLoading(false);
   };
 
   return (
     <div className="relative min-h-screen py-16 px-6 lg:px-20 ">
-              <Helmet>
-        <title>Petoba | Digital QR Menu & Ordering</title>
+      <Helmet>
+        <title>Foodies menu | Digital QR Menu & Ordering</title>
         <meta
           name="description"
-          content="Petoba lets restaurants create digital QR menus. Customers scan, order, and enjoy a contactless dining experience."
+          content="Foodies menu lets restaurants create digital QR menus. Customers scan, order, and enjoy a contactless dining experience."
         />
-
         <link
           rel="icon"
           href="https://petoba.avenirya.com/wp-content/uploads/2025/09/download-1.png"
@@ -54,11 +66,12 @@ const ContactPage = () => {
           property="og:image"
           content="https://petoba.avenirya.com/wp-content/uploads/2025/09/Untitled-design-6.png"
         />
-        <meta property="og:title" content="Petoba - Contact Us" />
+        <meta property="og:title" content="Foodies menu - Contact Us" />
         <meta property="og:description" content="Turn your restaurant’s menu into a digital QR code menu." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://yash.avenirya.com" />
       </Helmet>
+
       {/* Background Blobs */}
       <div className="absolute top-0 left-0 w-72 h-72 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
       <div className="absolute top-0 right-0 w-72 h-72 bg-purple-100 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
@@ -70,7 +83,7 @@ const ContactPage = () => {
           Contact <span className="text-blue-600">Us</span>
         </h1>
         <p className="text-center text-gray-600 max-w-2xl mx-auto mb-12">
-          Got questions about Petoba KOT & Billing? We’re here to help.  
+          Got questions about Foodies menu? We’re here to help.  
           Fill out the form below or reach out directly using the provided contact details.
         </p>
 
@@ -113,7 +126,7 @@ const ContactPage = () => {
                 disabled={loading}
                 className="px-10 py-4 rounded-full bg-gradient-to-r from-yellow-400 to-orange-500 text-gray-900 font-bold shadow-lg hover:scale-105 transition-transform disabled:opacity-50"
               >
-                {loading ? "Sending..." : "Send Message"}
+                {loading ? "Redirecting..." : "Send via WhatsApp"}
               </button>
               {status && <p className="mt-3 text-sm text-gray-700">{status}</p>}
             </form>
@@ -122,55 +135,50 @@ const ContactPage = () => {
           {/* Contact Info Card */}
           <div className="bg-white/70 backdrop-blur-lg rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-shadow duration-300 space-y-6">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">
-                Get in Touch
+              Get in Touch
             </h2>
 
-            {/* Address */}
             <div className="flex items-start space-x-4">
-                <div className="p-4 bg-blue-100 rounded-full text-blue-600">
-                  <FaMapMarkerAlt size={20} />
-                </div>
-                <p className="text-gray-700">
+              <div className="p-4 bg-blue-100 rounded-full text-blue-600">
+                <FaMapMarkerAlt size={20} />
+              </div>
+              <p className="text-gray-700">
                 Yuviz Digital,
-Pothencode, Trivandrum,
-Kerala
-                </p>
+                <br /> Pothencode, Trivandrum,
+                <br /> Kerala
+              </p>
             </div>
 
-            {/* Phone */}
             <div className="flex items-center space-x-4">
-                <div className="p-4 bg-green-100 rounded-full text-green-600">
-                  <FaPhoneAlt size={20} />
-                </div>
-                <p className="text-gray-700">+91 9656015000</p>
+              <div className="p-4 bg-green-100 rounded-full text-green-600">
+                <FaPhoneAlt size={20} />
+              </div>
+              <p className="text-gray-700">+91 9656015000</p>
             </div>
 
-            {/* WhatsApp */}
             <div className="flex items-center space-x-4">
-                <div className="p-4 bg-green-100 rounded-full text-green-600">
-                  <FaWhatsapp size={20} />
-                </div>
-                <a
-                  href="https://wa.me/919656015000"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-700 hover:text-green-600 transition-colors"
-                >
-                  Chat on WhatsApp
-                </a>
+              <div className="p-4 bg-green-100 rounded-full text-green-600">
+                <FaWhatsapp size={20} />
+              </div>
+              <a
+                href="https://wa.me/919656015000"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-700 hover:text-green-600 transition-colors"
+              >
+                Chat on WhatsApp
+              </a>
             </div>
 
-            {/* Emails */}
             <div className="flex items-center space-x-4">
-                <div className="p-4 bg-purple-100 rounded-full text-purple-600">
-                  <FaEnvelope size={20} />
-                </div>
-                <div className="space-y-1">
-                  <p className="text-gray-700">yuvizinfo@gmail.com</p>
-                </div>
+              <div className="p-4 bg-purple-100 rounded-full text-purple-600">
+                <FaEnvelope size={20} />
+              </div>
+              <div className="space-y-1">
+                <p className="text-gray-700">yuvizinfo@gmail.com</p>
+              </div>
             </div>
           </div>
-
         </div>
       </div>
     </div>

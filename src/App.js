@@ -48,7 +48,7 @@ function AppWrapper() {
   const noHeaderFooterRoutes = [
     "/menu/:id",
     "/cloudkitchen/:id",
-    "/menuwp/:id",
+    "/:id",
     "/shop/:id",
     "/restaurant/:id",
   ];
@@ -65,7 +65,7 @@ function AppWrapper() {
       <Routes>
         <Route path="/menu/:id" element={<MenuPageWithoutCart />} />
         <Route path="/cloudkitchen/:id" element={<MenuPageWithoutCartCloud />} />
-        <Route path="/menuwp/:id" element={<RestaurantMenuPagewp />} />
+        <Route path="/:id" element={<RestaurantMenuPagewp />} />
         <Route path="/shop/:id" element={<Beautysalon />} />
         <Route path="/doredirect" element={<RedirectManagerPage />} />
         <Route path="/restaurant/:id" element={<RestaurantMenuPage />} />

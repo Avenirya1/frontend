@@ -4,8 +4,8 @@ import { QRCodeCanvas } from "qrcode.react";
 
 const QRCodeTemplates = ({ restaurantId, membership_level }) => {
   // Dynamic links
-  const basicLink = `https://app.avenirya.com/menu/${restaurantId}`;
-  const wpLink = `https://app.avenirya.com/menuwp/${restaurantId}`;
+  const basicLink = `https://app.avenirya.com/${restaurantId}`;
+  const wpLink = `https://app.avenirya.com/${restaurantId}`;
 
   const [openFree, setOpenFree] = useState(true);
   const [openPremium, setOpenPremium] = useState(false);
@@ -172,26 +172,7 @@ const QRCodeTemplates = ({ restaurantId, membership_level }) => {
           </div>
       </div>
         )}
-      {/* Premium dropdown */}
-      <div className="mb-4 text-left">
-        <button
-          className="w-full flex justify-between items-center px-4 py-3 text-lg font-semibold focus:outline-none border-b"
-          onClick={() => setOpenPremium((v) => !v)}
-        >
-          <span>Premium QR</span>
-          <span>{openPremium ? "▲" : "▼"}</span>
-        </button>
-        {openPremium && (
-          <>
-            <h4 className="text-lg font-medium mb-2 text-gray-600 mt-4"></h4>
-            <div className="overflow-x-auto py-4">
-              <div className="flex gap-4">
-                {renderTemplates(basicLink, "premium-", 2, demoLinks.premium)}
-              </div>
-            </div>
-          </>
-        )}
-      </div>
+     
 
       {/* Pro dropdown */}
       <div className="mb-4 text-left">
