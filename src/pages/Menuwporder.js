@@ -203,11 +203,6 @@ if (!adminPhone) {
           content="Yuviz Digital lets restaurants create digital QR menus. Customers scan, order, and enjoy a contactless dining experience."
         />
 
-        <link
-          rel="icon"
-          href="https://petoba.avenirya.com/wp-content/uploads/2025/09/download-1.png"
-          type="image/png"
-        />
         <meta
           property="og:image"
           content="https://petoba.avenirya.com/wp-content/uploads/2025/09/Untitled-design-6.png"
