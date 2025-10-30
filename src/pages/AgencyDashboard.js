@@ -331,7 +331,7 @@ const AgencyDashboard = () => {
                           </button>
 
                           <a
-                            href={`/menu/${rest._id}`}
+                            href={`/${rest.slug}`}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex items-center gap-1 text-green-600 hover:text-green-800"

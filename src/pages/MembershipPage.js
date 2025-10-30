@@ -54,7 +54,7 @@ const MembershipPage = () => {
     },
     {
       name: "Yearly Plan",
-      price: "₹3500",
+      price: "₹2999",
       oldPrice: "₹6000",
       subText: "Free for 7 Days",
       period: "/year",

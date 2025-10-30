@@ -26,7 +26,7 @@ const SuperAdminDashboard = () => {
   const limits = {
     1: 10,   // Level 1 agency → max 10 restaurants
     2: 25,   // Level 2 agency → max 25 restaurants
-    3: 50,  // Level 3 agency → max 50 restaurants
+    3: 5000,  // Level 3 agency → max 50 restaurants
   };
 
   const API = "https://srv1070767.hstgr.cloud/api/admin";
