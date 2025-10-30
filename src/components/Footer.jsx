@@ -17,7 +17,7 @@ const Footer = () => {
                 className="h-14 w-auto mb-4 mx-auto md:mx-0"
               />
               <p className="text-gray-600 text-sm leading-relaxed">
-                Foodies menu - a smart menu for restaurants and take-aways - by Yuviz Digital{" "}
+                Foodies menu - a smart menu for restaurants and take-aways <br />- by Yuviz Digital{" "}
                  </p>
             </div>
 
