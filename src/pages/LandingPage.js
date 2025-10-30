@@ -468,13 +468,13 @@ const FaqItem = ({ question, answer, isOpen, onClick }) => (
     setMessage("");
     setOpen(false);
   };
-  return (
+  return (    
     <div className="relative">
             <Helmet>
-        <title>Petoba | Digital QR Menu & Ordering</title>
+        <title>Foodies Menu | Digital QR Menu & Ordering</title>
         <meta
           name="description"
-          content="Petoba lets restaurants create digital QR menus. Customers scan, order, and enjoy a contactless dining experience."
+          content="Foodies Menu lets restaurants create digital QR menus. Customers scan, order, and enjoy a contactless dining experience."
         />
 
         <link

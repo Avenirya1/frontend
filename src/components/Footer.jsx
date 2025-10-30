@@ -13,11 +13,11 @@ const Footer = () => {
             <div>
               <img
                 src="https://website.avenirya.com/wp-content/uploads/2025/10/3dd06b30-762a-45bc-8a2c-89eaacdfd347.jpg"
-                alt="Petoba Logo"
+                alt="Foodies Menu Logo"
                 className="h-14 w-auto mb-4 mx-auto md:mx-0"
               />
               <p className="text-gray-600 text-sm leading-relaxed">
-                Foodies menu - - a smart menu for restaurants and take-aways - by Yuviz .....{" "}
+                Foodies menu - a smart menu for restaurants and take-aways - by Yuviz Digital{" "}
                  </p>
             </div>
 
