@@ -309,7 +309,7 @@ if (!adminPhone) {
               <MenuCard key={item._id} item={item} addToCart={addToCart} />
             ))
           ) : (
-            <p className="text-gray-500 text-center mb-4">No items match your search.</p>
+            <p className="text-gray-500 text-center mb-4">No items Found</p>
           )}
         </div>
         <div>
