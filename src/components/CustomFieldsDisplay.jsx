@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { FaInstagram, FaFacebook, FaGlobe, FaPhone } from "react-icons/fa";
 
-const API_BASE = "https://srv1070767.hstgr.cloud/api/admin";
+const API_BASE = "/api/admin";
 
 const CustomFieldsDisplay = ({ restaurantId }) => {
   const [fields, setFields] = useState(null);
