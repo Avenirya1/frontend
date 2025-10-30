@@ -55,6 +55,9 @@ function AppWrapper() {
     "/agency",
     "/agency-register",
     "/agency-login",
+    "/superadmindashboard",
+    "/dashboard",
+    "/agency-dashboard",
   ];
 
   // Check if the current path matches one of the listed routes
