@@ -224,70 +224,74 @@ const uploadHomeImageToWordPress = async (file) => {
 
         {/* Popup form */}
         {formOpen && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-            <div className="bg-white w-full max-w-2xl p-6 rounded-2xl shadow relative">
-              <button
-                onClick={() => setFormOpen(false)}
-                className="absolute top-3 right-3 text-gray-500 hover:text-gray-700"
-              >
-                ✕
-              </button>
-              <h2 className="text-2xl font-semibold mb-6 text-gray-800">
-                {editingId ? "Edit Restaurant" : "Add Restaurant"}
-              </h2>
+  <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+    <div className="bg-white w-full max-w-2xl p-6 rounded-2xl shadow relative 
+                    max-h-[90vh] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100">
+      <button
+        onClick={() => setFormOpen(false)}
+        className="absolute top-3 right-3 text-gray-500 hover:text-gray-700"
+      >
+        ✕
+      </button>
+      <h2 className="text-2xl font-semibold mb-6 text-gray-800">
+        {editingId ? "Edit Restaurant" : "Add Restaurant"}
+      </h2>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <input name="name" placeholder="Restaurant Name" value={form.name} onChange={handleChange} className="p-3 border rounded-lg focus:ring focus:ring-blue-300" />
-                <input name="email" placeholder="Email" value={form.email} onChange={handleChange} className="p-3 border rounded-lg focus:ring focus:ring-blue-300" />
-                <input name="address" placeholder="Address" value={form.address} onChange={handleChange} className="p-3 border rounded-lg focus:ring focus:ring-blue-300" />
-                <input type="number" name="contact" placeholder="Contact Number" value={form.contact} onChange={handleChange} className="p-3 border rounded-lg focus:ring focus:ring-blue-300" />
-                <input name="password" type="password" placeholder={editingId ? "Change Password (optional)" : "Password"} value={form.password} onChange={handleChange} className="p-3 border rounded-lg focus:ring focus:ring-blue-300" />
-                <div className="md:col-span-2 mt-4">
-                  <label className="block mb-2 text-sm font-medium text-gray-600">
-                    Upload Home Image
-                  </label>
-                  <div className="border-dashed border-2 p-6 rounded-lg text-center cursor-pointer hover:bg-gray-50">
-                    <input
-                      type="file"
-                      accept="image/*"
-                      onChange={(e) => uploadHomeImageToWordPress(e.target.files[0])}
-                      className="hidden"
-                      id="homeImageUpload"
-                    />
-                    <label htmlFor="homeImageUpload" className="cursor-pointer flex flex-col items-center gap-2 text-gray-500">
-                      <Upload size={24} />
-                      <span>Click or drag to upload</span>
-                    </label>
-                  </div>
-                  {uploadingHome && <p className="text-blue-500 mt-2 flex items-center gap-2"><Loader2 className="animate-spin" size={16}/> Uploading...</p>}
-                  {form.homeImage && <img src={form.homeImage} alt="Home" className="mt-3 rounded-md h-20 object-cover border" />}
-                </div>
-                <div className="md:col-span-2">
-                  <label className="block mb-2 text-sm font-medium text-gray-600">
-                    Upload Logo
-                  </label>
-                  <div className="border-dashed border-2 p-6 rounded-lg text-center cursor-pointer hover:bg-gray-50">
-                    <input type="file" accept="image/*" onChange={(e) => uploadImageToWordPress(e.target.files[0])} className="hidden" id="logoUpload" />
-                    <label htmlFor="logoUpload" className="cursor-pointer flex flex-col items-center gap-2 text-gray-500">
-                      <Upload size={24} />
-                      <span>Click or drag to upload</span>
-                    </label>
-                  </div>
-                  {uploading && <p className="text-blue-500 mt-2 flex items-center gap-2"><Loader2 className="animate-spin" size={16}/> Uploading...</p>}
-                  {form.logo && <img src={form.logo} alt="Uploaded" className="mt-3 rounded-md h-20 object-cover border" />}
-                </div>
-              </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <input name="name" placeholder="Restaurant Name" value={form.name} onChange={handleChange} className="p-3 border rounded-lg focus:ring focus:ring-blue-300" />
+        <input name="email" placeholder="Email" value={form.email} onChange={handleChange} className="p-3 border rounded-lg focus:ring focus:ring-blue-300" />
+        <input name="address" placeholder="Address" value={form.address} onChange={handleChange} className="p-3 border rounded-lg focus:ring focus:ring-blue-300" />
+        <input type="number" name="contact" placeholder="Contact Number" value={form.contact} onChange={handleChange} className="p-3 border rounded-lg focus:ring focus:ring-blue-300" />
+        <input name="password" type="password" placeholder={editingId ? "Change Password (optional)" : "Password"} value={form.password} onChange={handleChange} className="p-3 border rounded-lg focus:ring focus:ring-blue-300" />
 
-              <button
-                onClick={handleSubmit}
-                className="mt-6 w-full px-6 py-3 bg-blue-600 text-white rounded-xl shadow hover:bg-blue-700 flex items-center justify-center gap-2"
-                disabled={uploading || loading}
-              >
-                {loading ? <Loader2 className="animate-spin" size={18}/> : editingId ? "Update" : "Create"} Restaurant
-              </button>
-            </div>
+        <div className="md:col-span-2 mt-4">
+          <label className="block mb-2 text-sm font-medium text-gray-600">
+            Upload Home Image
+          </label>
+          <div className="border-dashed border-2 p-6 rounded-lg text-center cursor-pointer hover:bg-gray-50">
+            <input
+              type="file"
+              accept="image/*"
+              onChange={(e) => uploadHomeImageToWordPress(e.target.files[0])}
+              className="hidden"
+              id="homeImageUpload"
+            />
+            <label htmlFor="homeImageUpload" className="cursor-pointer flex flex-col items-center gap-2 text-gray-500">
+              <Upload size={24} />
+              <span>Click or drag to upload</span>
+            </label>
           </div>
-        )}
+          {uploadingHome && <p className="text-blue-500 mt-2 flex items-center gap-2"><Loader2 className="animate-spin" size={16}/> Uploading...</p>}
+          {form.homeImage && <img src={form.homeImage} alt="Home" className="mt-3 rounded-md h-20 object-cover border" />}
+        </div>
+
+        <div className="md:col-span-2">
+          <label className="block mb-2 text-sm font-medium text-gray-600">
+            Upload Logo
+          </label>
+          <div className="border-dashed border-2 p-6 rounded-lg text-center cursor-pointer hover:bg-gray-50">
+            <input type="file" accept="image/*" onChange={(e) => uploadImageToWordPress(e.target.files[0])} className="hidden" id="logoUpload" />
+            <label htmlFor="logoUpload" className="cursor-pointer flex flex-col items-center gap-2 text-gray-500">
+              <Upload size={24} />
+              <span>Click or drag to upload</span>
+            </label>
+          </div>
+          {uploading && <p className="text-blue-500 mt-2 flex items-center gap-2"><Loader2 className="animate-spin" size={16}/> Uploading...</p>}
+          {form.logo && <img src={form.logo} alt="Uploaded" className="mt-3 rounded-md h-20 object-cover border" />}
+        </div>
+      </div>
+
+      <button
+        onClick={handleSubmit}
+        className="mt-6 w-full px-6 py-3 bg-blue-600 text-white rounded-xl shadow hover:bg-blue-700 flex items-center justify-center gap-2"
+        disabled={uploading || loading}
+      >
+        {loading ? <Loader2 className="animate-spin" size={18}/> : editingId ? "Update" : "Create"} Restaurant
+      </button>
+    </div>
+  </div>
+)}
+
 
         {/* Table */}
         <div className="bg-white p-6 rounded-2xl shadow relative z-10">
