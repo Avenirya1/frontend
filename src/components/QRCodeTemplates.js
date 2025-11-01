@@ -4,8 +4,8 @@ import { QRCodeCanvas } from "qrcode.react";
 
 const QRCodeTemplates = ({ restaurantId, membership_level }) => {
   // Dynamic links
-  const basicLink = `/${restaurantId}`;
-  const wpLink = `/${restaurantId}`;
+  const basicLink = `https://foodiesmenu.in/${restaurantId}`;
+  const wpLink = `https://foodiesmenu.in/${restaurantId}`;
 
   const [openFree, setOpenFree] = useState(true);
   const [openPremium, setOpenPremium] = useState(false);
