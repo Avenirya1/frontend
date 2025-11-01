@@ -4,8 +4,8 @@ import { QRCodeCanvas } from "qrcode.react";
 
 const QRCodeTemplates = ({ restaurantId, membership_level }) => {
   // Dynamic links
-  const basicLink = `https://app.avenirya.com/${restaurantId}`;
-  const wpLink = `https://app.avenirya.com/${restaurantId}`;
+  const basicLink = `/${restaurantId}`;
+  const wpLink = `/${restaurantId}`;
 
   const [openFree, setOpenFree] = useState(true);
   const [openPremium, setOpenPremium] = useState(false);
@@ -13,9 +13,9 @@ const QRCodeTemplates = ({ restaurantId, membership_level }) => {
 
   // Example demo links
   const demoLinks = {
-    free: "https://petoba.short.gy/Free",
-    premium: "https://petoba.short.gy/premium",
-    premiumWP: "https://petoba.short.gy/PremiumWP",
+    free: "/",
+    premium: "/",
+    premiumWP: "/",
   };
 
   const templates = [
