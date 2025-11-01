@@ -179,7 +179,7 @@ if (!adminPhone) {
   </p>
 
   <a
-    href="https://wa.me/918767640530?text=Hi%20I%20want%20to%20reactivate%20my%20restaurant%20menu"
+    href="https://wa.me/919656015000?text=Hi%20I%20want%20to%20reactivate%20my%20restaurant%20menu"
     target="_blank"
     rel="noopener noreferrer"
     className="inline-block bg-green-500 text-white font-semibold py-2 px-5 rounded-full mt-4 hover:bg-green-600 transition"
@@ -187,7 +187,7 @@ if (!adminPhone) {
     Chat on WhatsApp
   </a>
 
-  <p className="text-gray-400 text-sm mt-6">Powered By Yuviz Digital QR Menu</p>
+  <p className="text-gray-400 text-sm mt-6">Powered By Foodies Menu QR Menu</p>
 </div>
 
       </div>
