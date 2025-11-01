@@ -1370,7 +1370,7 @@ return (
   </div>
     {/* QR Section */}
     <QRCodeTemplates
-      restaurantId={restaurantId}
+      restaurantId={restaurant.slug}
       membership_level={restaurant.membership_level}
     />
 
