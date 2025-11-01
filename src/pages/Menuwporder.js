@@ -187,7 +187,7 @@ if (!adminPhone) {
     Chat on WhatsApp
   </a>
 
-  <p className="text-gray-400 text-sm mt-6">Powered By Foodies Menu QR Menu</p>
+  <p className="text-gray-400 text-sm mt-6">Powered By Foodies Menu </p>
 </div>
 
       </div>
